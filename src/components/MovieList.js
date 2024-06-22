@@ -24,7 +24,7 @@ export const MovieList = () => {
     }
 
     return (
-        <div className="mt-8 grid grid-cols-5 gap-20">
+        <div className="mt-8 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5">
             {movies?.Search && movies.Search.map((movie) => {
                 return <MovieCard movie={movie} handleMovieView={handleMovieView} handleAddToWatchlist={handleAddToWatchlist} />
             })

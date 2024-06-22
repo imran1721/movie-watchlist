@@ -13,11 +13,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className='flex'>
-        <div className='w-[20%] border-r-2 border-gray-200'>
+      <div className='grid grid-cols-10'>
+        <div className='col-span-2 border-r-2 border-gray-200 self-start sticky top-0'>
           <Sidebar />
         </div>
-        <div className='w-[80%] mx-16 py-16'>
+        <div className='col-span-8 mx-8 pt-4'>
           <Header />
           <SearchBar />
           <MovieList />

@@ -9,7 +9,7 @@ export const MovieCard = ({movie, handleMovieView, handleAddToWatchlist}) => {
         dispatch(setSelectedMovie(movie))
     }
     return (
-        <div className="flex flex-col border rounded bg-gray-50" onClick={handleSelectedMovie}>
+        <div className="flex flex-col border rounded bg-gray-50" onClick={handleSelectedMovie} handleAddToWatchlist={handleAddToWatchlist}>
         <div className="absolute w-16 h-16 z-10" onClick={handleAddToWatchlist}>
             <img className="" src={watchlistWhiteIcon} alt="Collection Icon" />
         </div>
