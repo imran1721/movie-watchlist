@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 757 796.25" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
-  <defs>
-    <style type="text/css">
-      .fil0 {
-        fill: black;
-        fill-rule: nonzero
-      }
-    </style>
-  </defs>
-  <g>
-    <path className="fil0" d="M232 494c67,-103 331,-384 525,-494 -192,201 -408,437 -524,637 -62,-93 -111,-240 -233,-267 114,-45 161,45 232,124z" />
-  </g>
-</svg>
+<svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" id="check" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="primary" points="5 12 10 17 19 8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></polyline></svg>

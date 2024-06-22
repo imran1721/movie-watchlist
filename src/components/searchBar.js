@@ -1,18 +1,23 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { searchIcon } from "../assets/icons"
 import { useState } from "react"
 import { fetchMovies } from "./asyncActions"
-import { search } from "./watchlistSlice"
+import { search, setSelectedWatchlist } from "./watchlistSlice"
 
 export const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState("")
+    const selectedWatchlist = useSelector((state) => state.selectedWatchlist)
+
     const dispatch = useDispatch();
 
     const handleSubmit = (event) =>{
         event.preventDefault();
+        dispatch(setSelectedWatchlist(""))
         dispatch(search(searchQuery))
         dispatch(fetchMovies(searchQuery))
     }
+    
+    if(selectedWatchlist) return <></>
 
     return (<div className="rounded mt-8">
         <form onSubmit={handleSubmit} className="mx-auto">

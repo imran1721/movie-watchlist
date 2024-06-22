@@ -6,10 +6,12 @@ import { MovieList } from './components/MovieList';
 import { useSelector } from 'react-redux';
 import { MovieDetailModal} from './components/AppModals/MovieDetailModal';
 import { WatchlistSelectionModal } from './components/AppModals/WatchlistSelectionModal';
+import { EditWatchlistModal } from './components/AppModals/EditWatchlistModal';
 
 function App() {
   const selectedMovieDetail = useSelector((state) => state.selectedMovieDetail)
   const shouldAddToWatchlistModalOpen = useSelector((state) => state.shouldAddToWatchlistModalOpen)
+  const shouldEditWatchlistModalOpen = useSelector((state) => state.editWatchlist)
 
   return (
     <div className="App">
@@ -24,6 +26,7 @@ function App() {
         </div>
         {selectedMovieDetail && <MovieDetailModal />}
         {shouldAddToWatchlistModalOpen && <WatchlistSelectionModal />}
+        {shouldEditWatchlistModalOpen && <EditWatchlistModal />}
       </div>
      
     </div>
