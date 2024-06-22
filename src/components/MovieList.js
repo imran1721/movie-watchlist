@@ -23,7 +23,7 @@ export const MovieList = () => {
     }
 
     return (
-        <div className="mt-8 grid grid-cols-5 gap-20">
+        <div className="mt-8 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5">
             {movies?.Search && movies.Search.map((movie) => {
                 return (
                     <div className="flex flex-col border rounded bg-gray-50">
@@ -32,7 +32,7 @@ export const MovieList = () => {
                         </div>
                         <div onClick={() => handleMovieView(movie.imdbID)}>
                             <div>
-                                <img className="h-[310px] w-full object-cover" src={movie.Poster} alt="Movie Poster" />
+                                <img className="h-[200px] w-full object-cover" src={movie.Poster} alt="Movie Poster" />
                             </div>
                             <div className="py-2 my-[auto]">
                                 {movie.Title}
