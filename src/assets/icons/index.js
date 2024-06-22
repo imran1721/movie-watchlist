@@ -6,5 +6,6 @@ import userIcon from './user.svg'
 import optionsIcon from './options.svg'
 import watchlistWhiteIcon from './watchlistWhite.svg';
 import closeIcon from './close.svg';
+import starIcon from './star.svg';
 
-export { watchlistIcon, checkIcon, searchIcon, homeIcon, userIcon, optionsIcon, watchlistWhiteIcon, closeIcon };
+export { watchlistIcon, checkIcon, searchIcon, homeIcon, userIcon, optionsIcon, watchlistWhiteIcon, closeIcon, starIcon };

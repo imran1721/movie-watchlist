@@ -6,16 +6,10 @@ const watchlistSlice = createSlice({
   initialState: {
     searchQuery: "",
     searchResult: null,
-    selectedMovieId: "",
+    selectedMovie: null,
     selectedMovieDetail: null,
     shouldAddToWatchlistModalOpen: false,
-    watchlist: {
-      watchlistName: [
-        {
-          
-        }
-      ]
-    }
+    watchlist: null,
   },
   reducers: {
     search(state, action){
@@ -35,6 +29,18 @@ const watchlistSlice = createSlice({
         ...state,
         shouldAddToWatchlistModalOpen: action.payload
       }
+    },
+    setSelectedMovie(state, action){
+      return {
+        ...state,
+        selectedMovie: action.payload
+      }
+    },
+    addToWatchlist(state, action){
+      return {
+        ...state,
+        watchlist: action.payload
+      }
     }
   },
   extraReducers: (builder) => {
@@ -48,5 +54,5 @@ const watchlistSlice = createSlice({
   }
 })
 
-export const { search, setSelectedMovieDetail, setShouldAddToWatchlistModalOpen } = watchlistSlice.actions
+export const { search, setSelectedMovieDetail, setShouldAddToWatchlistModalOpen, addToWatchlist, setSelectedMovie } = watchlistSlice.actions
 export default watchlistSlice.reducer
