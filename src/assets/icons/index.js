@@ -5,5 +5,6 @@ import homeIcon from './home.svg'
 import userIcon from './user.svg'
 import optionsIcon from './options.svg'
 import watchlistWhiteIcon from './watchlistWhite.svg';
+import closeIcon from './close.svg';
 
-export { watchlistIcon, checkIcon, searchIcon, homeIcon, userIcon, optionsIcon, watchlistWhiteIcon };
+export { watchlistIcon, checkIcon, searchIcon, homeIcon, userIcon, optionsIcon, watchlistWhiteIcon, closeIcon };

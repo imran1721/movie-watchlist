@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import { Header } from './components/Header';
 import { SearchBar } from './components/searchBar';
 import { Sidebar } from './components/sidebar';
 import { MovieList } from './components/MovieList';
+import { useSelector } from 'react-redux';
+import { MovieDetailModal} from './components/AppModals/MovieDetailModal';
+import { WatchlistSelectionModal } from './components/AppModals/WatchlistSelectionModal';
 
 function App() {
+  const selectedMovieDetail = useSelector((state) => state.selectedMovieDetail)
+  const shouldAddToWatchlistModalOpen = useSelector((state) => state.shouldAddToWatchlistModalOpen)
+
   return (
     <div className="App">
       <div className='flex'>
@@ -17,6 +22,8 @@ function App() {
           <SearchBar />
           <MovieList />
         </div>
+        {selectedMovieDetail && <MovieDetailModal />}
+        {shouldAddToWatchlistModalOpen && <WatchlistSelectionModal />}
       </div>
      
     </div>
