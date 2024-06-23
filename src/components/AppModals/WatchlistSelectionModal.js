@@ -10,7 +10,7 @@ export const WatchlistSelectionModal = () => {
     const selectedMovie = useSelector((state) => state.selectedMovie)
 
     const optionsToShow = watchlist && Object.entries(watchlist)
-    .filter(([listName, items]) => !items.some(item => item.imdbID === selectedMovie.imdbID))
+    .filter(([listName, items]) => !items.movies.some(item => item.imdbID === selectedMovie.imdbID))
     .map(([listName]) => listName) || [];
 
     const [selectedList, setSelectedList] = useState((optionsToShow[0]) || "")
