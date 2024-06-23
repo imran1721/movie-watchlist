@@ -18,6 +18,7 @@ export const Header = () => {
                 className="ml-4 w-8 h-8"
                 src={editIcon}
                 onClick={() => dispatch(setWatchlistToEdit(selectedWatchlist))}
+                alt="Edit"
               />
             </div>
           </div>

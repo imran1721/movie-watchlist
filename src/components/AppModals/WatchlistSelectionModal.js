@@ -72,7 +72,7 @@ export const WatchlistSelectionModal = () => {
       <div className="w-full">
         <div className="flex pb-4">
           <div className="w-full">
-            {watchlist && optionsToShow.length > 0 && (
+            {(watchlist && optionsToShow.length > 0) && (
               <div className="w-full flex pb-4">
                 <label className="text-xl my-auto mr-4">
                   Add to existing list:

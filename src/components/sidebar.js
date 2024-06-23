@@ -5,6 +5,7 @@ import { search, setSelectedWatchlist } from "./watchlistSlice";
 export const Sidebar = () => {
   const dispatch = useDispatch();
   const watchlist = useSelector((state) => state.watchlist);
+  const searchQuery = useSelector((state) => state.searchQuery);
   const selectedWatchlist = useSelector((state) => state.selectedWatchlist);
 
   const handleSelectWatchlist = (listName) => {
@@ -12,7 +13,7 @@ export const Sidebar = () => {
   };
 
   const handleHome = () => {
-    dispatch(search("Tom cruise"));
+    dispatch(search(searchQuery));
     dispatch(setSelectedWatchlist(""));
   };
 
@@ -26,7 +27,7 @@ export const Sidebar = () => {
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <img className="w-6 h-6 text-gray-500" src={searchIcon} />
+              <img className="w-6 h-6 text-gray-500" src={searchIcon} alt="Search"/>
             </div>
             <input
               type="search"
@@ -41,7 +42,7 @@ export const Sidebar = () => {
           className={`flex py-2 px-2 w-full rounded text-white ${!!selectedWatchlist ? "bg-gray-400" : "bg-primary"}`}
         >
           <div className="inline-flex align-middle">
-            <img className="w-6 h-6 mr-2 text-gray-500" src={homeIcon} />
+            <img className="w-6 h-6 mr-2 text-gray-500" src={homeIcon} alt="Home"/>
             Home
           </div>
         </button>
@@ -69,11 +70,11 @@ export const Sidebar = () => {
       </div>
       <div className="flex justify-between fixed bottom-[30px] border rounded bottom-90 w-[15%] items-center">
         <div className="flex items-center">
-          <img className="my-1 ml-1 mr-2 w-6 h-6" src={userIcon} />
+          <img className="my-1 ml-1 mr-2 w-6 h-6" src={userIcon} alt="User"/>
           Guest
         </div>
         <div className="mr-2">
-          <img className="my-1 ml-1 mr-2 w-6 h-6" src={optionsIcon} />
+          <img className="my-1 ml-1 mr-2 w-6 h-6" src={optionsIcon} alt="Options"/>
         </div>
       </div>
     </div>
