@@ -10,7 +10,7 @@ export const Modal = ({ title, children, handleClose }) => {
             className="mr-[-5px] mt-[-20px] cursor-pointer"
             onClick={handleClose}
           >
-            <img className="w-8 h-8" src={closeIcon} alt="Close Icon"/>
+            <img className="w-8 h-8" src={closeIcon} alt="Close Icon" />
           </div>
         </div>
         <div className="flex justify-between pt-8">{children}</div>

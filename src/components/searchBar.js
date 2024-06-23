@@ -31,7 +31,11 @@ export const SearchBar = () => {
       <form onSubmit={handleSubmit} className="mx-auto">
         <div className="relative">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <img className="w-6 h-6 text-gray-500" src={searchIcon} alt="search"/>
+            <img
+              className="w-6 h-6 text-gray-500"
+              src={searchIcon}
+              alt="search"
+            />
           </div>
           <input
             type="text"
