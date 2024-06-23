@@ -1,11 +1,31 @@
 import { useDispatch, useSelector } from "react-redux";
-import { homeIcon, optionsIcon, searchIcon, userIcon } from "../assets/icons"
+import { useNavigate } from "react-router-dom";
+import { homeIcon, logoutIcon, searchIcon, userIcon } from "../assets/icons"
 import { setSelectedWatchlist } from "./watchlistSlice";
 
+const UserInfo = ({ userInfo, userType }) => {
+    const firstLetterOfName = userInfo.name.trim().charAt().toUpperCase();
+
+    return <>
+        {userType === 'guest' ?
+        <><img className='my-1 ml-1 mr-2 w-6 h-6' src={userIcon} />Guest</>    
+            :
+        <div className='flex'>
+            <div className='flex justify-center items-center m-2 border-2 rounded-full w-9 h-9 font-bold text-primary border-primary bg-primary/10'>{firstLetterOfName}</div>
+            <div className='m-auto'>{userInfo.name}</div>
+        </div>
+    }
+    </>
+}
+
 export const Sidebar = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const watchlist = useSelector((state) => state.watchlist)
     const selectedWatchlist = useSelector((state) => state.selectedWatchlist)
+
+    const userInfo = JSON.parse(localStorage.getItem('user'));
+    const userType = localStorage.getItem('userType');
 
     const handleSelectWatchlist = (listName) => {
         dispatch(setSelectedWatchlist(listName))
@@ -13,6 +33,12 @@ export const Sidebar = () => {
 
     const handleHome = () => {
         dispatch(setSelectedWatchlist(""))
+    }
+
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('userType');
+        navigate('/login');
     }
 
     return (
@@ -43,8 +69,10 @@ export const Sidebar = () => {
                 </div>
             </div>
             <div className="flex justify-between fixed bottom-[30px] border rounded bottom-4 w-[80%] items-center">
-                <div className="flex items-center"><img className="my-1 ml-1 mr-2 w-6 h-6" src={userIcon} />Guest</div>
-                <div className="mr-2"><img className="my-1 ml-1 mr-2 w-6 h-6" src={optionsIcon} /></div>
+                <div className="flex items-center"><UserInfo userInfo={userInfo} userType={userType}/></div>
+                <div className="mr-2" onClick={handleLogout}>
+                    <img className="w-5 h-5 cursor-pointer" src={logoutIcon} />
+                </div>
             </div>
         </div>
     )
