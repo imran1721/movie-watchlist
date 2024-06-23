@@ -13,11 +13,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route
-            path="/"
+            path="/home"
             element={<AuthProvider element={<Home />} userInfo={userInfo} />}
           />
           <Route
-            path="/login"
+            path="/"
             element={<AuthProvider element={<Login />} userInfo={userInfo} />}
           />
         </Routes>

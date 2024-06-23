@@ -13,7 +13,7 @@ const Login = () => {
     else {
       localStorage.setItem("user", JSON.stringify({ email, name }));
       localStorage.setItem("userType", "user");
-      navigate("/");
+      navigate("/home");
     }
   };
 
@@ -23,7 +23,7 @@ const Login = () => {
       JSON.stringify({ email: "guest_entry", name: "guest" }),
     );
     localStorage.setItem("userType", "guest");
-    navigate("/");
+    navigate("/home");
   };
 
   return (

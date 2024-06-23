@@ -38,7 +38,7 @@ export const Sidebar = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("userType");
-    navigate("/login");
+    navigate("/");
   };
 
   const handleSelectWatchlist = (listName) => {

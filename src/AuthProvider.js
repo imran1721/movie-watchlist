@@ -6,12 +6,12 @@ export const AuthProvider = ({ element, userInfo }) => {
 
   useEffect(() => {
     const handleRedirect = () => {
-      if (!userInfo) navigate("/login");
-      else if (userInfo && window.location.pathname === "/login") navigate("/");
-    }
+      if (!userInfo) navigate("/");
+      else if (userInfo && window.location.pathname === "/") navigate("/home");
+    };
 
-    handleRedirect()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    handleRedirect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return element;
