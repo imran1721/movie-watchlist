@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
-import watchlistReducer from './components/watchlistSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import watchlistReducer from "./components/watchlistSlice";
 
 const store = configureStore({
-  reducer: watchlistReducer
-})
+  reducer: watchlistReducer,
+});
 
-export default store
+export default store;
