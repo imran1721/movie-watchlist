@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { fetchMovies, getMovieDetail } from './asyncActions';
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchMovies, getMovieDetail } from "./asyncActions";
 
 const watchlistSlice = createSlice({
-  name: 'watchlist',
+  name: "watchlist",
   initialState: {
     searchQuery: "",
     searchResult: null,
@@ -11,62 +11,70 @@ const watchlistSlice = createSlice({
     shouldAddToWatchlistModalOpen: false,
     watchlist: null,
     selectedWatchlist: "",
-    editWatchlist: ""
+    editWatchlist: "",
   },
   reducers: {
     search(state, action) {
       return {
         ...state,
-        searchQuery: action.payload
-      }
+        searchQuery: action.payload,
+      };
     },
     setSelectedMovieDetail(state, action) {
       return {
         ...state,
-        selectedMovieDetail: action.payload
-      }
+        selectedMovieDetail: action.payload,
+      };
     },
     setShouldAddToWatchlistModalOpen(state, action) {
       return {
         ...state,
-        shouldAddToWatchlistModalOpen: action.payload
-      }
+        shouldAddToWatchlistModalOpen: action.payload,
+      };
     },
     setSelectedMovie(state, action) {
       return {
         ...state,
-        selectedMovie: action.payload
-      }
+        selectedMovie: action.payload,
+      };
     },
     addToWatchlist(state, action) {
       return {
         ...state,
-        watchlist: action.payload
-      }
+        watchlist: action.payload,
+      };
     },
     setSelectedWatchlist(state, action) {
       return {
         ...state,
-        selectedWatchlist: action.payload
-      }
+        selectedWatchlist: action.payload,
+      };
     },
     setWatchlistToEdit(state, action) {
       return {
         ...state,
-        editWatchlist: action.payload
-      }
-    }
+        editWatchlist: action.payload,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMovies.fulfilled, (state, action) => {
-        state.searchResult = action.payload
+        state.searchResult = action.payload;
       })
       .addCase(getMovieDetail.fulfilled, (state, action) => {
-        state.selectedMovieDetail = action.payload
-      })
-  }
-})
+        state.selectedMovieDetail = action.payload;
+      });
+  },
+});
 
-export const { search, setSelectedMovieDetail, setShouldAddToWatchlistModalOpen, addToWatchlist, setSelectedMovie, setSelectedWatchlist, setWatchlistToEdit } = watchlistSlice.actions
-export default watchlistSlice.reducer
+export const {
+  search,
+  setSelectedMovieDetail,
+  setShouldAddToWatchlistModalOpen,
+  addToWatchlist,
+  setSelectedMovie,
+  setSelectedWatchlist,
+  setWatchlistToEdit,
+} = watchlistSlice.actions;
+export default watchlistSlice.reducer;
