@@ -42,7 +42,7 @@ export const Sidebar = () => {
                     )}
                 </div>
             </div>
-            <div className="flex justify-between fixed bottom-[30px] border rounded bottom-90 w-[15%] items-center">
+            <div className="flex justify-between fixed bottom-[30px] border rounded bottom-4 w-[80%] items-center">
                 <div className="flex items-center"><img className="my-1 ml-1 mr-2 w-6 h-6" src={userIcon} />Guest</div>
                 <div className="mr-2"><img className="my-1 ml-1 mr-2 w-6 h-6" src={optionsIcon} /></div>
             </div>
