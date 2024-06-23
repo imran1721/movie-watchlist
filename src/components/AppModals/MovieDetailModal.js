@@ -13,7 +13,6 @@ export const MovieDetailModal = () => {
   const handleClose = () => {
     dispatch(setSelectedMovieDetail(null));
   };
-  console.log(selectedMovieDetail);
 
   return (
     <Modal

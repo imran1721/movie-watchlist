@@ -23,7 +23,7 @@ export const SearchBar = () => {
     dispatch(search(searchQuery));
     dispatch(fetchMovies(searchQuery));
   };
-  console.log(searchQuery);
+
   if (selectedWatchlist) return <></>;
 
   return (
