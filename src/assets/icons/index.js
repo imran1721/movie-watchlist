@@ -9,5 +9,6 @@ import closeIcon from './close.svg';
 import starIcon from './star.svg';
 import editIcon from './edit.svg';
 import checkGreenIcon from './check-green.svg';
+import checkWhiteIcon from './check-white.svg';
 
-export { watchlistIcon, checkIcon, searchIcon, homeIcon, userIcon, optionsIcon, watchlistWhiteIcon, closeIcon, starIcon, editIcon, checkGreenIcon };
+export { watchlistIcon, checkIcon, searchIcon, homeIcon, userIcon, optionsIcon, watchlistWhiteIcon, closeIcon, starIcon, editIcon, checkGreenIcon, checkWhiteIcon };

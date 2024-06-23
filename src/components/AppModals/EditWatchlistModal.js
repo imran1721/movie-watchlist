@@ -18,7 +18,6 @@ export const EditWatchlistModal = () => {
     }
 
     const handleSave = () => {
-        console.log(watchlist)
         let updatedWatchlist =  { ...watchlist };
 
         updatedWatchlist[listName] = {
