@@ -10,6 +10,7 @@ import starIcon from "./star.svg";
 import editIcon from "./edit.svg";
 import checkGreenIcon from "./check-green.svg";
 import checkWhiteIcon from "./check-white.svg";
+import logoutIcon from "./logout.svg";
 
 export {
   watchlistIcon,
@@ -24,4 +25,5 @@ export {
   editIcon,
   checkGreenIcon,
   checkWhiteIcon,
+  logoutIcon,
 };
