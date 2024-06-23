@@ -1,8 +1,20 @@
+import { useDispatch, useSelector } from "react-redux";
 import { homeIcon, optionsIcon, searchIcon, userIcon } from "../assets/icons"
-
+import { setSelectedWatchlist } from "./watchlistSlice";
 
 export const Sidebar = () => {
-    const list = ['Old Movies', 'Funny', 'War Movies', 'Rom-Com', 'Biopic', 'War Movies', 'Rom-Com', 'Biopic'];
+    const dispatch = useDispatch()
+    const watchlist = useSelector((state) => state.watchlist)
+    const selectedWatchlist = useSelector((state) => state.selectedWatchlist)
+
+    const handleSelectWatchlist = (listName) => {
+        dispatch(setSelectedWatchlist(listName))
+    }
+
+    const handleHome = () => {
+        dispatch(setSelectedWatchlist(""))
+    }
+
     return (
         <div className="h-screen pt-2 px-6 w-full">
             <div className="text-4xl font-bold text-primary mb-4">
@@ -18,14 +30,14 @@ export const Sidebar = () => {
                         <input type="search" className="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary/50 focus:border-primary/50 focus:outline-none" placeholder="Search" required />
                     </div>
                 </form>
-                <button className="flex py-2 px-2 bg-primary w-full rounded text-white"><div className="inline-flex align-middle"><img className="w-6 h-6 mr-2 text-gray-500" src={homeIcon} />Home</div></button>
+                <button onClick={handleHome} className={`flex py-2 px-2 w-full rounded text-white ${!!selectedWatchlist ? "bg-gray-400" : "bg-primary" }`}><div className="inline-flex align-middle"><img className="w-6 h-6 mr-2 text-gray-500" src={homeIcon} />Home</div></button>
             </div>
             <div className="flex flex-col items-start pl-2 pt-2">
                 <div className="font-semibold text-primary">My Watchlist</div>
-                <div className="h-60 w-full mt-2 overflow-y-auto flex flex-col items-start">
-                    {list.map(el => 
-                        <div key={el} className="pl-2 py-2 bg-gray-50 h-full w-full flex border-b hover:bg-primary/10 hover:border-primary cursor-pointer">
-                            {el}
+                <div className="h-60 w-full mt-2 overflow-y-auto flex flex-col items-start rounded-lg">
+                    {watchlist && Object.keys(watchlist).map(el =>
+                        <div key={el} className={`my-1 pl-2 py-2 h-full w-full flex border rounded-r-xl hover:bg-primary/80 hover:border-primary cursor-pointer text-black h-max ${el === selectedWatchlist ? "bg-primary/90":"bg-white" }`} onClick={() => handleSelectWatchlist(el)}>
+                           <div className="flex items-center"> <div className="!w-6 !h-8 mr-2 border text-xl text-white bg-black font-bold font-serif">{el[0]}</div>{el}</div>
                         </div>
                     )}
                 </div>
