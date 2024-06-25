@@ -27,8 +27,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col m-auto justify-center bg-primary/10 h-screen">
-      <div className="self-center items-center m-auto mt-20 border p-5 rounded-xl shadow bg-white">
+    <div className="flex flex-col m-auto justify-center bg-gray-200 h-screen">
+      <div className="self-center items-center m-auto border p-5 rounded-xl shadow bg-white">
         <div className="text-2xl font-bold text-primary">
           Welcome to Watchlist!
         </div>

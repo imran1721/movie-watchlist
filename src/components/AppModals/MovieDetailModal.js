@@ -19,7 +19,7 @@ export const MovieDetailModal = () => {
       title={`${selectedMovieDetail.Title} (${selectedMovieDetail.Year})`}
       handleClose={handleClose}
     >
-      <div className="w-[40%] my-auto pr-4">
+      <div className="w-full md:w-[40%] my-auto pr-4">
         {selectedMovieDetail.Poster === "N/A" ? (
           <img
             className="w-full object-cover"
@@ -28,13 +28,13 @@ export const MovieDetailModal = () => {
           />
         ) : (
           <img
-            className="w-full object-cover"
+            className="w-full object-cover lg:pb-0 pb-5"
             src={selectedMovieDetail.Poster}
             alt="Movie Poster"
           />
         )}
       </div>
-      <div className="w-[60%] text-left flex flex-col items-start">
+      <div className="w-full md:w-[60%] text-left flex flex-col items-start">
         <div className="pb-1">
           <p>
             <span className="font-semibold">Plot</span>:{" "}

@@ -42,8 +42,8 @@ export const EditWatchlistModal = () => {
       <div className="w-full">
         <div className="flex pb-4">
           <div className="w-full">
-            <div className="w-full flex pt-4">
-              <label className="text-xl my-auto mr-4">
+            <div className="w-full flex flex-col items-center lg:flex-row pt-4">
+              <label className="text-xl pb-4 lg:pb-0 my-auto mr-4">
                 Create New List:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </label>
               <input
@@ -57,8 +57,8 @@ export const EditWatchlistModal = () => {
                 placeholder="List Name"
               />
             </div>
-            <div className="w-full flex pt-4 pb-4">
-              <label className="text-xl my-auto mr-4">
+            <div className="w-full flex flex-col items-center lg:flex-row pt-4 pb-4">
+              <label className="text-xl pb-4 lg:pb-0 my-auto mr-4">
                 List Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </label>
               <input

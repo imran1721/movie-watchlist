@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { homeIcon, logoutIcon, searchIcon, userIcon } from "../assets/icons";
 import { search, setSelectedWatchlist } from "./watchlistSlice";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const UserInfo = ({ userInfo, userType }) => {
   const firstLetterOfName = userInfo.name.trim().charAt().toUpperCase();
@@ -31,9 +32,28 @@ export const Sidebar = () => {
   const watchlist = useSelector((state) => state.watchlist);
   const searchQuery = useSelector((state) => state.searchQuery);
   const selectedWatchlist = useSelector((state) => state.selectedWatchlist);
+  const [searchedPlaylist, setSearchedPlaylist] = useState("");
+  const [watchlistToShow, setWatchlistToShow] = useState("");
 
   const userInfo = JSON.parse(localStorage.getItem("user"));
   const userType = localStorage.getItem("userType");
+
+  const handleSearchPlaylist = (e) => {
+    setSearchedPlaylist(e.target.value);
+  };
+
+  useEffect(() => {
+    if (watchlist)
+      if (searchedPlaylist && watchlist) {
+        setWatchlistToShow(
+          Object.keys(watchlist).filter((eachWatchlist) =>
+            eachWatchlist.includes(searchedPlaylist),
+          ),
+        );
+      } else {
+        setWatchlistToShow(Object.keys(watchlist));
+      }
+  }, [searchedPlaylist, watchlist]);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -68,8 +88,10 @@ export const Sidebar = () => {
             </div>
             <input
               type="search"
+              value={searchedPlaylist}
               className="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary/50 focus:border-primary/50 focus:outline-none"
-              placeholder="Search"
+              placeholder="Search Playlist..."
+              onChange={handleSearchPlaylist}
               required
             />
           </div>
@@ -91,8 +113,8 @@ export const Sidebar = () => {
       <div className="flex flex-col items-start pl-2 pt-2">
         <div className="font-semibold text-primary">My Watchlist</div>
         <div className="h-60 w-full mt-2 overflow-y-auto flex flex-col items-start rounded-lg">
-          {watchlist &&
-            Object.keys(watchlist).map((el) => (
+          {watchlistToShow &&
+            watchlistToShow.map((el) => (
               <div
                 key={el}
                 className={`my-1 pl-2 py-2 h-full w-full flex border rounded-r-xl hover:bg-primary/80 hover:border-primary cursor-pointer text-black h-max ${el === selectedWatchlist ? "bg-primary/90" : "bg-white"}`}

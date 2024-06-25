@@ -11,6 +11,7 @@ import editIcon from "./edit.svg";
 import checkGreenIcon from "./check-green.svg";
 import checkWhiteIcon from "./check-white.svg";
 import logoutIcon from "./logout.svg";
+import closeWhiteIcon from "./close-white.svg";
 
 export {
   watchlistIcon,
@@ -26,4 +27,5 @@ export {
   checkGreenIcon,
   checkWhiteIcon,
   logoutIcon,
+  closeWhiteIcon,
 };

@@ -12,6 +12,7 @@ const watchlistSlice = createSlice({
     watchlist: null,
     selectedWatchlist: "",
     editWatchlist: "",
+    shouldShowSpinner: false,
   },
   reducers: {
     search(state, action) {
@@ -35,14 +36,25 @@ const watchlistSlice = createSlice({
     setWatchlistToEdit(state, action) {
       state.editWatchlist = action.payload;
     },
+    setShouldShowSpinner(state, action) {
+      state.shouldShowSpinner = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchMovies.pending, (state) => {
+        state.shouldShowSpinner = true;
+      })
+      .addCase(getMovieDetail.pending, (state) => {
+        state.shouldShowSpinner = true;
+      })
       .addCase(fetchMovies.fulfilled, (state, action) => {
         state.searchResult = action.payload;
+        state.shouldShowSpinner = false;
       })
       .addCase(getMovieDetail.fulfilled, (state, action) => {
         state.selectedMovieDetail = action.payload;
+        state.shouldShowSpinner = false;
       });
   },
 });
