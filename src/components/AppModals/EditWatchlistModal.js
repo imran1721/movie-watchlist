@@ -43,7 +43,7 @@ export const EditWatchlistModal = () => {
         <div className="flex pb-4">
           <div className="w-full">
             <div className="w-full flex flex-col items-center lg:flex-row pt-4">
-              <label className="text-xl pb-4 lg:pb-0 my-auto mr-4">
+              <label className="w-full lg:w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4">
                 Create New List:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </label>
               <input
@@ -52,13 +52,13 @@ export const EditWatchlistModal = () => {
                   setShouldShowError(false);
                   setListName(e.target.value);
                 }}
-                className="w-1/2 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
+                className="w-full lg:w-3/5 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
                 type="text"
                 placeholder="List Name"
               />
             </div>
             <div className="w-full flex flex-col items-center lg:flex-row pt-4 pb-4">
-              <label className="text-xl pb-4 lg:pb-0 my-auto mr-4">
+              <label className="w-full lg:w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4">
                 List Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </label>
               <input
@@ -66,7 +66,7 @@ export const EditWatchlistModal = () => {
                 onChange={(e) => {
                   setListDescription(e.target.value);
                 }}
-                className="w-1/2 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
+                className="w-full lg:w-3/5 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
                 type="text"
                 placeholder="List Description"
               />

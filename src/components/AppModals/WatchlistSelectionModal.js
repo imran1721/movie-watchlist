@@ -74,11 +74,11 @@ export const WatchlistSelectionModal = () => {
           <div className="w-full">
             {watchlist && optionsToShow.length > 0 && (
               <div className="w-full flex flex-col items-center lg:flex-row pb-4">
-                <label className="w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4 w-max">
+                <label className="w-full lg:w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4 w-max">
                   Add to existing list:
                 </label>
                 <select
-                  className="w-3/5 p-2 bg-gray-50 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
+                  className="w-full lg:w-3/5 p-2 bg-gray-50 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
                   onChange={(e) => setSelectedList(e.target.value)}
                 >
                   {optionsToShow.map((key) => (
@@ -88,7 +88,7 @@ export const WatchlistSelectionModal = () => {
               </div>
             )}
             <div className="w-full flex flex-col items-center lg:flex-row pt-4">
-              <label className="w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4">
+              <label className="w-full lg:w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4">
                 Create New List:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </label>
               <input
@@ -96,20 +96,20 @@ export const WatchlistSelectionModal = () => {
                   setShouldShowError(false);
                   setListName(e.target.value);
                 }}
-                className="w-3/5 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
+                className="w-full lg:w-3/5 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
                 type="text"
                 placeholder="List Name"
               />
             </div>
             <div className="w-full flex flex-col items-center lg:flex-row pt-4 pb-4">
-              <label className="w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4">
+              <label className="w-full lg:w-2/5 text-xl pb-4 lg:pb-0 my-auto mr-4">
                 List Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </label>
               <input
                 onChange={(e) => {
                   setListDescription(e.target.value);
                 }}
-                className="w-3/5 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
+                className="w-full lg:w-3/5 p-2 border rounded border-primary/20 focus:border-primary/80 focus:outline-none"
                 type="text"
                 placeholder="List Description"
               />

@@ -13,7 +13,7 @@ export const Modal = ({ title, children, handleClose }) => {
             <img className="w-8 h-8" src={closeIcon} alt="Close Icon" />
           </div>
         </div>
-        <div className="flex lg:flex-row flex-col h-max items-center justify-between pt-8 pb-5 lg:pb-0">
+        <div className="flex lg:flex-row flex-col h-max items-center justify-between pt-8 pb-12 lg:pb-0">
           {children}
         </div>
       </div>
