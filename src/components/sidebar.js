@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const UserInfo = ({ userInfo, userType }) => {
+  if (!userInfo) return;
   const firstLetterOfName = userInfo.name.trim().charAt().toUpperCase();
 
   return (
