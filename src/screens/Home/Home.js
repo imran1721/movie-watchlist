@@ -40,7 +40,7 @@ function Home() {
       <div
         className={`h-screen overflow-y-none fixed inset-y-0 left-0 transform bg-white transition-transform lg:relative lg:translate-x-0 lg:w-1/5 border-r-2 border-gray-200 z-30 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <Sidebar />
+        <Sidebar setIsSidebarOpen={setIsSidebarOpen} />
       </div>
 
       {/* Main Content */}

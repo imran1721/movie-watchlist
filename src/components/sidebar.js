@@ -27,7 +27,7 @@ const UserInfo = ({ userInfo, userType }) => {
   );
 };
 
-export const Sidebar = () => {
+export const Sidebar = ({ setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const watchlist = useSelector((state) => state.watchlist);
@@ -64,11 +64,13 @@ export const Sidebar = () => {
 
   const handleSelectWatchlist = (listName) => {
     dispatch(setSelectedWatchlist(listName));
+    setIsSidebarOpen(false);
   };
 
   const handleHome = () => {
     dispatch(search(searchQuery));
     dispatch(setSelectedWatchlist(""));
+    setIsSidebarOpen(false);
   };
 
   return (
