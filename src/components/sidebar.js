@@ -131,7 +131,7 @@ export const Sidebar = () => {
             ))}
         </div>
       </div>
-      <div className="flex justify-between fixed bottom-[30px] border rounded bottom-4 w-[80%] items-center">
+      <div className="flex justify-between fixed bottom-[80px] lg:bottom-[30px] border rounded bottom-4 w-[80%] items-center">
         <div className="flex items-center">
           <UserInfo userInfo={userInfo} userType={userType} />
         </div>
