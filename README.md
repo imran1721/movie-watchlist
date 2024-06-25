@@ -31,3 +31,9 @@ for more information.
 - Add multiple watchlists based on your favourite genre/actor or anything.
 - Search your playlist.
 - Mark movies watched.
+
+# Env
+
+- REACT_APP_API_BASE_URL is Movies API Base URL.
+- REACT_APP_API_KEY is the API Key to for Movie API.
+
