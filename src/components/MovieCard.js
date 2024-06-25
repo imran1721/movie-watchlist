@@ -49,7 +49,7 @@ export const MovieCard = ({ movie, handleMovieView, handleAddToWatchlist }) => {
           <img src={watchlistWhiteIcon} alt="Collection Icon" />
         </div>
         <div
-          className={`w-12 h-12 z-10 ${!selectedWatchlist && "hidden"}`}
+          className={`absolute w-12 h-12 z-10 ${!selectedWatchlist && "hidden"}`}
           onClick={handleWatched}
         >
           {movie.isWatched ? (
